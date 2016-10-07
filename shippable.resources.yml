@@ -1,0 +1,8 @@
+resources:                                                                                          
+  - name: LinuxBuilder                                                                              
+    type: image                                                                                     
+    integration: Thaumatec docker                                                                   
+    pointer:                                                                                        
+      sourceName: "thaumatec/u14cpp"                                                                
+    seed:                                                                                           
+      versionName: "latest"
