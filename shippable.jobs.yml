@@ -1,0 +1,14 @@
+jobs:
+  - name: DoSomething                           #required
+    type: runSh                                 #required
+    on_start:                                   #optional
+      - script: echo 'This block executes when the TASK starts'
+    steps:                                      #required
+      - IN: LinuxBuilder
+      - TASK:
+        - script: echo "Doing something"
+    on_success:                                 #optional
+      - script: echo 'This block executes after the TASK section executes successfully'
+    on_failure:                                 #optional
+      - script: echo 'This block executes if the TASK section fails'
+
