@@ -1,0 +1,19 @@
+language: none                                                                                      
+                                                                                                    
+branches:                                                                                           
+    only:                                                                                           
+        - master                                                                                    
+                                                                                                    
+build:                                                                                              
+    ci:                                                                                             
+        ls;                                                                                         
+    on_success:                                                                                     
+        echo "Success";                                                                             
+                                                                                                    
+notifications:                                                                                      
+  - integrationName: "PipelineTrigger"                                                              
+    type: webhook                                                                                   
+    payload:                                                                                        
+      - versionName=$BRANCH.$BUILD_NUMBER                                                           
+    on_success: always                                                                              
+    on_failure: never 
